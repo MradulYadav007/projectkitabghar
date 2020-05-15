@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -23,17 +24,20 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 public class Sell extends AppCompatActivity {
     private static final int PICK_IMAGE_REGUEST = 1;
     Button b1, b2, b3, b4;
+    EditText e1;
     ImageView i1;
     ProgressBar p1;
     private Uri mimage;
     private StorageReference mstorage;
     private DatabaseReference mdatabase;
+    private StorageTask mstoragetask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,7 @@ public class Sell extends AppCompatActivity {
         b3 = (Button) findViewById(R.id.button7);
         b4 = (Button) findViewById(R.id.button8);
         i1 = (ImageView) findViewById(R.id.imageView2);
+        e1=(EditText)findViewById(R.id.editText3) ;
         p1 = (ProgressBar) findViewById(R.id.progress_bar);
 
         mstorage = FirebaseStorage.getInstance().getReference("uploads");
@@ -70,6 +75,10 @@ public class Sell extends AppCompatActivity {
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(mstoragetask!=null && mstoragetask.isInProgress()){
+                    Toast.makeText(Sell.this, "Upload in progress", Toast.LENGTH_SHORT).show();
+                }
+                else
                 uploadFile();
             }
         });
@@ -103,7 +112,7 @@ public class Sell extends AppCompatActivity {
         if (mimage != null) {
             StorageReference fileReference=mstorage.child(System.currentTimeMillis()
             +"."+getFileExtension(mimage));
-            fileReference.putFile(mimage)
+            mstoragetask=fileReference.putFile(mimage)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -115,6 +124,10 @@ public class Sell extends AppCompatActivity {
                                 }
                             },5000);
                             Toast.makeText(Sell.this, "Upload successfull", Toast.LENGTH_SHORT).show();
+                          Upload upload=new Upload(e1.getText().toString().trim(),
+                                    taskSnapshot.getMetadata().getReference().getDownloadUrl().toString());
+                            String uploadId=mdatabase.push().getKey();
+                            mdatabase.child(uploadId).setValue(upload);
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {

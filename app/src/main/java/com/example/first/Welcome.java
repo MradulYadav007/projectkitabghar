@@ -58,7 +58,8 @@ public class Welcome extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),Sell.class));
                         break;
                     case R.id.nav_buy:
-                        Toast.makeText(Welcome.this, "Buy", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Welcome.this, "Buy any book from here", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),Buy.class));
                         break;
                 }
                 return false;
