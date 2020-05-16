@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.SignInMethodQueryResult;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     EditText e1, e2, e3, e4;
     FirebaseAuth mAuth;
     DatabaseReference firebaseDatabase;
+    Boolean check;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 final String username = e1.getText().toString();
-                String password = e3.getText().toString();
+                final String password = e3.getText().toString();
                 final String email = e2.getText().toString();
                 final String phone = e4.getText().toString();
                 if (TextUtils.isEmpty(email)) {
@@ -59,22 +61,32 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Please Enter phone number", Toast.LENGTH_SHORT).show();
                 }
                 if (!(TextUtils.isEmpty(email)) && !(TextUtils.isEmpty(password)) && !(TextUtils.isEmpty(username)) && !(TextUtils.isEmpty(phone))) {
-                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (!(task.isSuccessful())) {
-                                        Userdetail information = new Userdetail(username, email, phone);
-                                        FirebaseDatabase.getInstance().getReference("Users")
-                                                .child(FirebaseAuth.getInstance().getUid())
-                                                .setValue(information).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    mAuth.fetchSignInMethodsForEmail(e2.getText().toString())
+                            .addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+                                    check = task.getResult().getSignInMethods().isEmpty();
+                                    if (check) {
+                                        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                                             @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
-                                                Toast.makeText(MainActivity.this, "User successfully Registered", Toast.LENGTH_SHORT).show();
-                                                startActivity(new Intent(getApplicationContext(),Login.class));
+                                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                                if (!(task.isSuccessful())) {
+                                                    Userdetail information = new Userdetail(username, email, phone);
+                                                    FirebaseDatabase.getInstance().getReference("Users")
+                                                            .child(FirebaseAuth.getInstance().getUid())
+                                                            .setValue(information).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                            Toast.makeText(MainActivity.this, "User successfully Registered", Toast.LENGTH_SHORT).show();
+                                                            startActivity(new Intent(getApplicationContext(), Login.class));
+                                                        }
+                                                    });
+                                                }
+
                                             }
                                         });
-                                    }
-
+                                    } else
+                                        Toast.makeText(MainActivity.this, "User already exist", Toast.LENGTH_SHORT).show();
                                 }
                             });
                 }

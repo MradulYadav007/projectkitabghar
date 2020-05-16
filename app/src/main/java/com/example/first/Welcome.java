@@ -61,6 +61,9 @@ public class Welcome extends AppCompatActivity {
                         Toast.makeText(Welcome.this, "Buy any book from here", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(),Buy.class));
                         break;
+                    case  R.id.nav_Logout:
+                        Toast.makeText(Welcome.this, "You are logged out", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),Logout.class));
                 }
                 return false;
             }
