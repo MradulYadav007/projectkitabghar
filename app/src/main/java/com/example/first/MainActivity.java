@@ -22,7 +22,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     Button b1, b2;
-    TextView t1, t2, t3, t4, t5, t6;
     EditText e1, e2, e3, e4;
     FirebaseAuth mAuth;
     DatabaseReference firebaseDatabase;
