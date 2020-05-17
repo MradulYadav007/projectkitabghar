@@ -3,9 +3,8 @@ package com.example.first;
 public class Upload {
     private String mname;
     private String mImageUrl;
-    public Upload(){
-
-
+    public Upload (){
+        
     }
     public Upload(String name,String ImageUrl)
     {
@@ -24,7 +23,8 @@ public class Upload {
     public String getImageUrl(){
         return mImageUrl;
     }
-    public void setImageUrl(String imageurl){
-        mImageUrl=imageurl;
+
+    public void setImageUrl(String mImageUrl) {
+        this.mImageUrl = mImageUrl;
     }
 }

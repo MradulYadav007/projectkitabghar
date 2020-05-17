@@ -44,7 +44,7 @@ public class Sell extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell);
         b1 = (Button) findViewById(R.id.button5);
-        b2 = (Button) findViewById(R.id.button6);
+        //b2 = (Button) findViewById(R.id.button6);
         b3 = (Button) findViewById(R.id.button7);
         b4 = (Button) findViewById(R.id.button8);
         i1 = (ImageView) findViewById(R.id.imageView2);
@@ -57,13 +57,6 @@ public class Sell extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Sell.this, Welcome.class));
-            }
-        });
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
             }
         });
         b3.setOnClickListener(new View.OnClickListener() {
@@ -98,8 +91,7 @@ public class Sell extends AppCompatActivity {
        /* if (requestCode ==1 && resultCode == RESULT_OK  && data != null && data.getAction() != null) {*/
             mimage = data.getData();
             Toast.makeText(this, "Image viewed", Toast.LENGTH_SHORT).show();
-           // Picasso.with(this).load(mimage).into(i1);
-            i1.setImageURI(mimage);
+           Picasso.with(this).load(mimage).into(i1);
         }
 
     private String getFileExtension(Uri uri) {

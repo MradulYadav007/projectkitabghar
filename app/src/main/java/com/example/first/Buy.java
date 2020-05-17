@@ -20,6 +20,7 @@ import java.util.List;
 public class Buy extends AppCompatActivity {
     private RecyclerView mRecyclerview;
     private ImageAdapter imageAdapter;
+    private  DatabaseReference mdatabaseref;
 
     private List<Upload> mUpload;
 
@@ -32,12 +33,12 @@ public class Buy extends AppCompatActivity {
         mRecyclerview.setHasFixedSize(true);
         mRecyclerview.setLayoutManager(new LinearLayoutManager(this));
         mUpload=new ArrayList<>();
-        DatabaseReference mdatabaseref = FirebaseDatabase.getInstance().getReference("uploads");
+        mdatabaseref = FirebaseDatabase.getInstance().getReference("uploads");
         mdatabaseref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot postsnapshot: dataSnapshot.getChildren()){
-                    Upload upload=postsnapshot.getValue(Upload.class);
+                for(DataSnapshot postseason: dataSnapshot.getChildren()){
+                    Upload upload=postseason.getValue(Upload.class);
                     mUpload.add(upload);
                 }
               imageAdapter= new ImageAdapter(Buy.this,mUpload);
