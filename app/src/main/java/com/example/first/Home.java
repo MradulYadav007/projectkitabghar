@@ -11,9 +11,9 @@ public class Home extends Application {
     public void onCreate() {
         super.onCreate();
         FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
-        FirebaseUser firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser firebaseUser=FirebaseAuth.getInstance().getCurrentUser();//if the user has already logged in in the decive,he need not need to again login unless he log out
         if (firebaseUser!=null){
-            Intent i=new Intent(Home.this,Welcome.class);
+            Intent i=new Intent(Home.this,Welcome.class);// this class is created to keep the session recorded for a user
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(i);
         }

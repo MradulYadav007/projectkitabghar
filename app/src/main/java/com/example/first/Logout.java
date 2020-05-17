@@ -18,9 +18,9 @@ public class Logout extends AppCompatActivity {
         setContentView(R.layout.activity_logout);
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
-        FirebaseAuth.getInstance().signOut();
+        FirebaseAuth.getInstance().signOut();                        //terminate the session of user and log out
         Intent intent=new Intent(Logout.this,MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);             //clear cache
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
 

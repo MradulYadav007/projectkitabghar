@@ -25,7 +25,36 @@
         <ImageView
             android:id="@+id/imageview3"
             android:layout_width="match_parent"
-            android:layout_height="200dp" />
+            android:layout_height="400dp" />
+
+        <TextView
+            android:id="@+id/price_of_object"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="Price"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/ownername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="OwnerName"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:id="@+id/contact_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="Mobile Number"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"/>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

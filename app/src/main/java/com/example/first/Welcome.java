@@ -23,7 +23,7 @@ import androidx.appcompat.widget.Toolbar;
 public class Welcome extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    NavigationView navigationview;
+    NavigationView navigationview;//side navigation bar
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class Welcome extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Feature yet to be added", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -50,20 +50,20 @@ public class Welcome extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {//this fuction enable you to select an option from the navigation menu bar
                 switch(menuItem.getItemId())
                 {
                     case R.id.nav_sell:
                         Toast.makeText(Welcome.this, "Sell by upload an image", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),Sell.class));
+                        startActivity(new Intent(getApplicationContext(),Sell.class));//move to activity to sell the objects(upload object details)
                         break;
                     case R.id.nav_buy:
                         Toast.makeText(Welcome.this, "Buy any book from here", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),Buy.class));
+                        startActivity(new Intent(getApplicationContext(),Buy.class));//from here we go to buy activity and see the things that are on sale
                         break;
                     case  R.id.nav_Logout:
                         Toast.makeText(Welcome.this, "You are logged out", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),Logout.class));
+                        startActivity(new Intent(getApplicationContext(),Logout.class));//take you to log out activity and logs you out directly
                 }
                 return false;
             }
