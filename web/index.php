@@ -40,7 +40,7 @@ if($_POST){
             }
             
         }
-}
+      }
 
 
 ?>
@@ -48,90 +48,97 @@ if($_POST){
 
 
 <!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+				 <html lang="en">
+				  <head>
+					<!-- Required meta tags -->
+					<meta charset="utf-8">
+					<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/a499abd50b.js" crossorigin="anonymous"></script>
+					<!-- Bootstrap CSS -->
+					<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+					<script src="https://kit.fontawesome.com/a499abd50b.js" crossorigin="anonymous"></script>
 
 
- <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
-  />
-  
-  
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.3/jquery.scrollTo.min.js"></script>
+				 <link
+					rel="stylesheet"
+					href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+				  />
+				  
+				  
+				   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+				<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.3/jquery.scrollTo.min.js"></script>
 
-<script src="/path/to/jquery.min.js"></script>
-<script src="/path/to/bootstrap.min.js"></script>
-<script src="./dist/jquery.smoothScroll.min.js"></script>
+				<script src="/path/to/jquery.min.js"></script>
+				<script src="/path/to/bootstrap.min.js"></script>
+				<script src="./dist/jquery.smoothScroll.min.js"></script>
 
     <title>Book By Choice</title>
     <style type=text/css>
       
-      html { 
-  background: url(back.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}  
+							  html { 
+						  background: url(back.jpg) no-repeat center center fixed; 
+						  -webkit-background-size: cover;
+						  -moz-background-size: cover;
+						  -o-background-size: cover;
+						  background-size: cover;
+						        }  
         
-        body{
-            
-            
-            background:none;
-        }
-        .container{
-            
-            text-align:center;
-            
-        }
-        .jumbotron{
-            background:none;
-            
-        }
-        #exampleInputEmail1{
-            
-            width:300px;
-            margin:10px;
-        }
-        .card{
-            
-            margin:20px;
-        }
-        #learn{
-            
-            margin-bottom:5px;
-        }
-        #footer{
-            
-            background-color:#A3A4A6;
-        }
-        #appIcon{
-            
-            width:300px;
-            
-        }
-              </style>
+							
+							
+						body{background:none;}
+							
+							
+							
+						.container{text-align:center;}
+								
+							
+							
+							
+							.jumbotron{background:none;}
+								
+							
+								#exampleInputEmail1{
+									
+									width:300px;
+									margin:10px;
+								}
+								
+								.card{
+									
+									margin:20px;
+								}
+								
+								
+								#learn{
+									
+									margin-bottom:5px;
+								}
+								
+								
+								#footer{
+									
+									background-color:#A3A4A6;
+								}
+								
+								
+									#appIcon{
+										
+										width:300px;
+										
+									}
+   </style>
   </head>
   <body>
     
            
             <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="navbar-example">
-                <div class="container">
-  <a class="navbar-brand" href="#">Book By Choice</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+            <div class="container">
+            <a class="navbar-brand" href="#">Book By Choice</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
@@ -155,7 +162,7 @@ if($_POST){
       
     </ul>
    
-  </div>
+                       </div>
   </div>
 </nav>
  <div data-spy="scroll" data-target="#navbar-example" data-offset="150" class="scrollspy-example">
@@ -167,7 +174,7 @@ if($_POST){
   <p class="lead">Get All the Second-hand books and stuff directly from your seniors</p>
   <hr class="my-4">
   <p>Want to know more?Join Our Mailing list!</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button"id="learn">Learn more</a>
+  <a class="btn btn-primary btn-lg" href="#about" role="button"id="learn">Learn more</a>
     
 <div id="error"><? echo $error.$successMessage; ?></div>
     <form method="post">
@@ -190,34 +197,36 @@ if($_POST){
 		   
 		    <p class="lead">Ever wanted to buy a book but could not because it was too expensive? worry not! because BookByChoice is here! BookByChoice, these days in news,is being called as the Robinhood of the world of books especially for MNNIT.Our team is committed to bring to you all kinds of best books at the minimal prices ever seen anywhere. Yes, we are literally giving you away a steal</p>
 		    <p class="lead">Yes, We are on App. Just Search on play store/ App Store & install BookByChoice App. Unlock lots of shopping options</p>
+		    <hr class="my-4">
 		  <h1>Why this App is Awesome</h1>
-		   <p class="lead">No Commission..Buy and sell any book or any other essential thing through this app..Very useful app for freshers in MNNIT</p>
+		  
+		   <p class="lead">Did you get exhausted while searching books in market but you did't get it.BookByChoice app will solve this problem.Here you will easily find your all book according to your interest and can buy it.Not even if you want to sell your books or other study material than you can do it here.</p>
 		   	     
 		   </div>
 		   
 		   
 		  <div class="card-group">
-  <div class="card wow animate__animated animate__zoomIn animate__delay-1s " id="feature">
-    <img src="card1.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">ScreenShots of app</h5>
-      <p class="card-text">.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        <div class="card wow animate__animated animate__zoomIn animate__delay-1s " id="feature">
+        <img src="card1.jpg" class="card-img-top" alt="...">
+       <div class="card-body">
+       <h5 class="card-title">Sell any item</h5>
+      <p class="card-text">.By this option you can sell your study material like books,drafter etc.in reasonable cost.</p>
       
     </div>
   </div>
   <div class="card wow animate__animated animate__zoomIn animate__delay-1s">
     <img src="card1.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">ScreenShots of app</h5>
-      <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+      <h5 class="card-title">Buy</h5>
+      <p class="card-text">By this option you can buy all the material which comes under your interest and in your budget.</p>
       
     </div>
   </div>
   <div class="card wow animate__animated animate__zoomIn animate__delay-1s ">
     <img src="card1.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">ScreenShots of app</h5>
-      <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+      <h5 class="card-title">Chat</h5>
+      <p class="card-text">By this option you can chat with buyer or seller and discuss about the respective material.</p>
      
     </div>
   </div>
