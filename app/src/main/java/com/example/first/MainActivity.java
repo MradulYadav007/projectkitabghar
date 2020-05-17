@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.SignInMethodQueryResult;
@@ -22,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     Button b1, b2;
-    EditText e1, e2, e3, e4;
+    EditText t1,t2,t3,t4;
     FirebaseAuth mAuth;
     DatabaseReference firebaseDatabase;
     Boolean check;
@@ -33,20 +34,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         b1 = (Button) findViewById(R.id.button);
         b2 = (Button) findViewById(R.id.button2);
-        e1 = (EditText) findViewById(R.id.editText4);
-        e2 = (EditText) findViewById(R.id.editText5);
-        e3 = (EditText) findViewById(R.id.editText6);
-        e4 = (EditText) findViewById(R.id.editText7);
+        t1=findViewById(R.id.editText4);
+        t2=findViewById(R.id.editText5);
+        t3=findViewById(R.id.editText6);
+        t4=findViewById(R.id.editText7);
         mAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance().getReference("Users");
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                final String username = e1.getText().toString();
-                final String password = e3.getText().toString();
-                final String email = e2.getText().toString();
-                final String phone = e4.getText().toString();
+                final String username = t1.getText().toString().trim();
+                final String password = t3.getText().toString().trim();
+                final String email = t2.getText().toString().trim();
+                final String phone = t3.getText().toString().trim();
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(MainActivity.this, "Please Enter email", Toast.LENGTH_SHORT).show();
                 }
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Please Enter phone number", Toast.LENGTH_SHORT).show();
                 }
                 if (!(TextUtils.isEmpty(email)) && !(TextUtils.isEmpty(password)) && !(TextUtils.isEmpty(username)) && !(TextUtils.isEmpty(phone))) {
-                    mAuth.fetchSignInMethodsForEmail(e2.getText().toString())
+                    mAuth.fetchSignInMethodsForEmail(t2.getText().toString())
                             .addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
@@ -77,13 +78,18 @@ public class MainActivity extends AppCompatActivity {
                                                         @Override
                                                         public void onComplete(@NonNull Task<Void> task) {
                                                             Toast.makeText(MainActivity.this, "User successfully Registered", Toast.LENGTH_SHORT).show();
-                                                            startActivity(new Intent(getApplicationContext(), Login.class));
+                                                            startActivity(new Intent(MainActivity.this, Login.class));
                                                         }
                                                     });
                                                 }
 
                                             }
                                         });
+                                        if(check)
+                                        {
+                                            Toast.makeText(MainActivity.this, "User successfully Registered", Toast.LENGTH_SHORT).show();
+                                            startActivity(new Intent(MainActivity.this, Login.class));
+                                        }
                                     } else
                                         Toast.makeText(MainActivity.this, "User already exist", Toast.LENGTH_SHORT).show();
                                 }
