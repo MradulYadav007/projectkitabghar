@@ -1,18 +1,18 @@
 <?php
-     $error="";$successMessage="";
+$error="";$successMessage="";
 
-     if($_POST){
+if($_POST){
     
      if(!$_POST['email']){
          
-       $error .="An email address is required.<br>";
-      }
+         $error .="An email address is required.<br>";
+     }
      
      if($error != ""){
          
-        $error = '<div class="alert alert-danger" role="alert"><p><strong>'.$error.'</div>';
+         $error = '<div class="alert alert-danger" role="alert"><p><strong>'.$error.'</div>';
          
-      }
+     }
      else {
             
             $emailTo = $_POST['email'];
@@ -32,8 +32,7 @@
                 $successMessage = '<div class="alert alert-success" role="alert">Your message was sent, we\'ll get back to you ASAP!</div>';
                 
                 
-             }
-             else {
+            } else {
                 
                 $error = '<div class="alert alert-danger" role="alert"><p><strong>Your message couldn\'t be sent - please try again later</div>';
                 
@@ -41,7 +40,7 @@
             }
             
         }
-      }
+}
 
 
 ?>

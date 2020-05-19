@@ -1,144 +1,45 @@
-<?php
-$error="";$successMessage="";
-
-if($_POST){
-    
-     if(!$_POST['email']){
-         
-         $error .="An email address is required.<br>";
-     }
-     
-     if($error != ""){
-         
-         $error = '<div class="alert alert-danger" role="alert"><p><strong>'.$error.'</div>';
-         
-     }
-     else {
-            
-            $emailTo = $_POST['email'];
-            
-            
-            $subject = "BookByChoice";
-            
-            
-            $body = "Welcome to book by choice.Download the app now from the link here";
-            
-            
-            
-            $headers = "From: bookbychoice@gmail.com";
-            
-            if (mail($emailTo, $subject, $body, $headers)) {
-                
-                $successMessage = '<div class="alert alert-success" role="alert">Your message was sent, we\'ll get back to you ASAP!</div>';
-                
-                
-            } else {
-                
-                $error = '<div class="alert alert-danger" role="alert"><p><strong>Your message couldn\'t be sent - please try again later</div>';
-                
-                
-            }
-            
-        }
-      }
-
-
-?>
 
 
 
 <!doctype html>
-				 <html lang="en">
-				  <head>
-					<!-- Required meta tags -->
-					<meta charset="utf-8">
-					<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-					<!-- Bootstrap CSS -->
-					<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-					<script src="https://kit.fontawesome.com/a499abd50b.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a499abd50b.js" crossorigin="anonymous"></script>
+<?php include 'file.php';?>
 
+ <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+  
+  
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.3/jquery.scrollTo.min.js"></script>
 
-				 <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
-				  />
-				  
-				  
-				   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-				<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.3/jquery.scrollTo.min.js"></script>
-
-				<script src="/path/to/jquery.min.js"></script>
-				<script src="/path/to/bootstrap.min.js"></script>
-				<script src="./dist/jquery.smoothScroll.min.js"></script>
+<script src="/path/to/jquery.min.js"></script>
+<script src="/path/to/bootstrap.min.js"></script>
+<script src="./dist/jquery.smoothScroll.min.js"></script>
 
     <title>Book By Choice</title>
-    <style type=text/css>
-      
-							  html { 
-						  background: url(back.jpg) no-repeat center center fixed; 
-						  -webkit-background-size: cover;
-						  -moz-background-size: cover;
-						  -o-background-size: cover;
-						  background-size: cover;
-						        }  
-        
-							
-							
-						body{background:none;}
-							
-							
-							
-						.container{text-align:center;}
-								
-							
-							
-							
-							.jumbotron{background:none;}
-								
-							
-								#exampleInputEmail1{
-									
-									width:300px;
-									margin:10px;
-								}
-								
-								.card{
-									
-									margin:20px;
-								}
-								
-								
-								#learn{
-									
-									margin-bottom:5px;
-								}
-								
-								
-								#footer{
-									
-									background-color:#A3A4A6;
-								}
-								
-								
-									#appIcon{
-										
-										width:300px;
-										
-									}
-   </style>
+    <link rel ="stylesheet" type="text/css" href="style.css"/>
   </head>
   <body>
     
            
             <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="navbar-example">
-            <div class="container">
-            <a class="navbar-brand" href="#">Book By Choice</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
+                <div class="container">
+  <a class="navbar-brand" href="#">Book By Choice</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
@@ -162,7 +63,7 @@ if($_POST){
       
     </ul>
    
-                       </div>
+  </div>
   </div>
 </nav>
  <div data-spy="scroll" data-target="#navbar-example" data-offset="150" class="scrollspy-example">
@@ -206,16 +107,16 @@ if($_POST){
 		   
 		   
 		  <div class="card-group">
-        <div class="card wow animate__animated animate__zoomIn animate__delay-1s " id="feature">
-        <img src="card1.jpg" class="card-img-top" alt="...">
-       <div class="card-body">
-       <h5 class="card-title">Sell any item</h5>
+  <div class="card wow animate__animated animate__zoomIn animate__delay-1s " id="feature">
+    <img src="sell.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Sell any item</h5>
       <p class="card-text">.By this option you can sell your study material like books,drafter etc.in reasonable cost.</p>
       
     </div>
   </div>
   <div class="card wow animate__animated animate__zoomIn animate__delay-1s">
-    <img src="card1.jpg" class="card-img-top" alt="...">
+    <img src="buy.jpeg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Buy</h5>
       <p class="card-text">By this option you can buy all the material which comes under your interest and in your budget.</p>
@@ -223,7 +124,7 @@ if($_POST){
     </div>
   </div>
   <div class="card wow animate__animated animate__zoomIn animate__delay-1s ">
-    <img src="card1.jpg" class="card-img-top" alt="...">
+    <img src="chat.jpeg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Chat</h5>
       <p class="card-text">By this option you can chat with buyer or seller and discuss about the respective material.</p>
@@ -250,7 +151,7 @@ if($_POST){
     <h1 class="display-4 wow animate__animated animate__fadeIn animate__delay-1s ">Get in touch</h1>
     <p class="lead"> Want to get in touch?We'd love to hear from you.Here's how you can reach us..</p>
     <p class="lead font-weight-bold"> <a href="tel:8529467827"><i class="fas fa-phone"></i>  Call us :+91 8529467827</a></p>
-    <p class="lead font-weight-bold"><a href="https://api.whatsapp.com/send?phone=+918529267827"><i class="fab fa-whatsapp"></i>    Or Whatsapp us</a></p>
+    <p class="lead font-weight-bold"><a href="https://api.whatsapp.com/send?phone=+918529467827"><i class="fab fa-whatsapp"></i>    Or Whatsapp us</a></p>
   </div>
 </div>
 
