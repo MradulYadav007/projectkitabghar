@@ -42,3 +42,5 @@ Or simply install it by click download below
 
 
 #### ![sell](https://user-images.githubusercontent.com/59697798/82376150-53564000-9a3f-11ea-88f5-caec3e4942e4.jpeg)
+
+![buy](https://user-images.githubusercontent.com/59697798/82376127-4afe0500-9a3f-11ea-954d-c29529f0cd3a.jpeg)
