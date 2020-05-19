@@ -39,3 +39,6 @@ Here are some features of app.
 Or simply install it by click download below
 
 ### [Download](https://drive.google.com/folderview?id=1pWREb8YVvZZs4WoGuXCs_OmwxNJ8Ifyh)
+
+
+#### ![sell](https://user-images.githubusercontent.com/59697798/82376150-53564000-9a3f-11ea-88f5-caec3e4942e4.jpeg)
