@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Logout"></activity>
+        <activity android:name=".Forgotpassword"></activity>
+        <activity android:name=".Logout" />
         <activity android:name=".Buy" />
         <activity android:name=".Sell" />
         <activity
