@@ -44,3 +44,8 @@ Or simply install it by click download below
 #### ![sell](https://user-images.githubusercontent.com/59697798/82376150-53564000-9a3f-11ea-88f5-caec3e4942e4.jpeg)
 
 ![buy](https://user-images.githubusercontent.com/59697798/82376127-4afe0500-9a3f-11ea-954d-c29529f0cd3a.jpeg)
+
+
+![WhatsApp Image 2020-05-20 at 00 58 53](https://user-images.githubusercontent.com/59697798/82376700-1cccf500-9a40-11ea-816f-185f1075f30f.jpeg)
+![WhatsApp Image 2020-05-20 at 00 59 27](https://user-images.githubusercontent.com/59697798/82376721-26565d00-9a40-11ea-85fe-d91c30ce1e17.jpeg)
+![WhatsApp Image 2020-05-20 at 01 00 37](https://user-images.githubusercontent.com/59697798/82376727-29514d80-9a40-11ea-9400-c538600211b8.jpeg)
