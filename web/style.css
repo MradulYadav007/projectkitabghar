@@ -1,59 +1,62 @@
-   
-      
-							  html { 
-						  background: url(back.jpg) no-repeat center center fixed; 
-						  -webkit-background-size: cover;
-						  -moz-background-size: cover;
-						  -o-background-size: cover;
-						  background-size: cover;
-						        }  
+     * {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+       }
+
+     html { 
+      background: url(back.jpg) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+     -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      }					        }  
         
 							
 							
-						body{
+       body{
             background:none;
             }
 							
 							
 							
-						.container{
+       .container{
             text-align:center;
             }
 								
 							
 							
 						
-							.jumbotron{
+      .jumbotron{
               background:none;
               }
 								
 							
-								#exampleInputEmail1{
+      #exampleInputEmail1{
 									
-									width:300px;
-									margin:10px;
-								}
+        width:300px;
+        margin:10px;
+              }
 								
-								.card{
+       .card {
+           margin:20px;								
+            }
+								
+								
+       #learn{
 									
-									margin:20px;
-								}
+       margin-bottom:5px;
+             }
 								
 								
-								#learn{
-									
-									margin-bottom:5px;
-								}
 								
-								
-								#footer{
-									
-									background-color:#A3A4A6;
-								}
-								
-								
-									#appIcon{
+       #appIcon{
 										
-										width:300px;
-									}
+	width:300px;
+	     }
+							
+       #footer{
+									
+       background-color:#A3A4A6;
+             }
+	
    
